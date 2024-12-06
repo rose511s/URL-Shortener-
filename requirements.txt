@@ -1,0 +1,6 @@
+django
+plotly
+pandas
+whitenoise
+brotli
+gunicorn

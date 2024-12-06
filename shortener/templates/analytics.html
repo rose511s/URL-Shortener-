@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Analytics</title>
+		<link
+			rel="stylesheet"
+			href="{% static 'bootstrap.min.css' %}"
+			type="text/css"
+			media="screen"
+		/>
+		<link
+			rel="stylesheet"
+			href="{% static 'style1.css' %}"
+			type="text/css"
+			media="screen"
+		/>
+	</head>
+	<body>
+		<h1 class="headings">Statistics</h1>
+		<div class="url_link1">
+		   <div class="url_link">
+			<div class="box_heading">
+			Long url
+			</div>
+			<a href="{{ long_url }}" class="long_url_l" target="blank">
+				{{ long_url }}</a
+			>
+		    </div>
+		<p class="data_link"> <div> <span class="box_heading">Creation date :</span> <span class="value">{{ date }}</span> </div></p>
+		<p id="link" class="link_element">
+			<span class="box_heading">Shortened Url Link Created :</span>
+			<span class="value">
+			<a href="/{{ short_url }}" class="short_url_l" target="blank">
+				{{ short_url }}</a
+			>
+			</span>
+		</p>
+		<div class="stats_total btn-cutt click_stats btn_norm">
+			<div>
+				<span class="box_heading">Total number of visits to the site :</span>
+				<strong class="allClicks"><span class="value">{{ clicks }}</span></strong>
+			</div>
+		</div>
+		</div>
+		<div class="plots">
+			<div class="fig">
+				{% autoescape off %} {{ plot_div_1 }} {% endautoescape %}
+			</div>
+			<div class="fig">
+				{% autoescape off %} {{ plot_div_2 }} {% endautoescape %}
+			</div>
+		</div>
+	</body>
+</html>
